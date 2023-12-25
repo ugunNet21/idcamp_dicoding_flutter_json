@@ -17,7 +17,6 @@ class _RestaurantListPageState extends State<RestaurantListPage> {
   @override
   void initState() {
     super.initState();
-    // Mengambil data dari file JSON lokal
     _loadDataFromJson();
   }
 

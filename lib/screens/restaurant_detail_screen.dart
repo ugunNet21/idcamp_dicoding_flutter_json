@@ -4,7 +4,8 @@ import 'package:flutter_subm1_localjson/models/restaurant.dart';
 class RestaurantDetailPage extends StatefulWidget {
   final Restaurant restaurant;
 
-  const RestaurantDetailPage({Key? key, required this.restaurant}) : super(key: key);
+  const RestaurantDetailPage({Key? key, required this.restaurant})
+      : super(key: key);
 
   @override
   // ignore: library_private_types_in_public_api
@@ -39,6 +40,7 @@ class _RestaurantDetailPageState extends State<RestaurantDetailPage> {
               'Description:',
               style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
             ),
+            
             const SizedBox(height: 8),
             Text(
               showFullDescription
@@ -55,20 +57,28 @@ class _RestaurantDetailPageState extends State<RestaurantDetailPage> {
                 },
                 child: const Text('Show More'),
               ),
-            const SizedBox(height: 16),
+            const SizedBox(height: 8),
             Row(
               children: [
                 const Icon(Icons.star, color: Colors.yellow),
                 const SizedBox(width: 8),
                 Text(
                   '${widget.restaurant.rating}',
-                  style: const TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+                  style: const TextStyle(
+                      fontSize: 18, fontWeight: FontWeight.bold),
+                ),
+                const SizedBox(width: 16),
+                const Icon(Icons.location_city, color: Colors.blue),
+                const SizedBox(width: 8),
+                Text(
+                  widget.restaurant.city,
+                  style: const TextStyle(fontSize: 16),
                 ),
               ],
             ),
-            const SizedBox(height: 16),
+            const SizedBox(height: 8),
             const Text(
-              'Menus:',
+              'Menu:',
               style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
             ),
             _buildMenuList(widget.restaurant.menus['foods'], 'Foods'),
@@ -94,9 +104,7 @@ class _RestaurantDetailPageState extends State<RestaurantDetailPage> {
         ),
         Column(
           crossAxisAlignment: CrossAxisAlignment.start,
-          children: menuList
-              .map((menu) => Text('- ${menu['name']}'))
-              .toList(),
+          children: menuList.map((menu) => Text('- ${menu['name']}')).toList(),
         ),
         const SizedBox(height: 16),
       ],

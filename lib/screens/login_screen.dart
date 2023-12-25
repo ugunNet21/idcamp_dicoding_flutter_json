@@ -25,6 +25,12 @@ class _LoginScreenState extends State<LoginScreen> {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
+              Icon(
+                Icons.account_circle,
+                size: 100,
+                color: Theme.of(context).primaryColor,
+              ),
+              const SizedBox(height: 16.0),
               TextField(
                 controller: _emailController,
                 decoration: const InputDecoration(labelText: 'Email'),
@@ -57,7 +63,18 @@ class _LoginScreenState extends State<LoginScreen> {
                             const BottomNavigationScreen(initialIndex: 0)),
                   );
                 },
-                child: const Text('Login with Google'),
+                child: Row(
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    Image.asset(
+                      'assets/google_logo.png',
+                      height: 24,
+                      width: 24,
+                    ),
+                    const SizedBox(width: 8),
+                    const Text('Login with Google'),
+                  ],
+                ),
               ),
               const SizedBox(height: 16.0),
               ElevatedButton(
@@ -69,7 +86,32 @@ class _LoginScreenState extends State<LoginScreen> {
                             const BottomNavigationScreen(initialIndex: 0)),
                   );
                 },
-                child: const Text('Login with Facebook'),
+                child: Row(
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    Image.asset(
+                      'assets/facebook_logo.png',
+                      height: 24,
+                      width: 24,
+                    ),
+                    const SizedBox(width: 8),
+                    const Text('Login with Facebook'),
+                  ],
+                ),
+              ),
+              const SizedBox(height: 16.0),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  TextButton(
+                    onPressed: () {},
+                    child: const Text('Forgot Password?'),
+                  ),
+                  TextButton(
+                    onPressed: () {},
+                    child: const Text('Sign Up'),
+                  ),
+                ],
               ),
             ],
           ),
