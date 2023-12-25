@@ -32,9 +32,7 @@ Restaurant App is a Flutter application that displays a list of restaurants with
 cd restaurant-app
 Install dependencies:
 
-```bash
 flutter pub get
 Run the app:
 
-```bash
 flutter run
