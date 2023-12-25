@@ -24,9 +24,8 @@ Restaurant App is a Flutter application that displays a list of restaurants with
 1. Clone the repository:
 
    ```bash
-   git clone https://github.com/your-username/restaurant-app.git
-
-   Navigate to the project directory:
+   git clone https://github.com/ugunNet21/idcamp_dicoding_flutter_json.git
+2. Navigate to the project directory:
 
 ```bash
 cd restaurant-app
